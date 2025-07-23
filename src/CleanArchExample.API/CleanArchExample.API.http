@@ -1,0 +1,36 @@
+### 🟢 Test Weather Forecast (GET)
+GET http://localhost:5284/weatherforecast
+Accept: application/json
+
+###
+
+### 🟢 Create Product (POST)
+POST http://localhost:5284/api/Product
+Content-Type: application/json
+
+{
+  "name": "Macbook Pro M3",
+  "price": 3999.99,
+  "stock": 10
+}
+
+###
+
+### 🟢 Get Product By Id (GET) – Thay {id} bằng ID thực tế bạn nhận được sau khi POST
+GET http://localhost:5284/api/Product/0841d615-f518-4b1b-8319-79c691f2d0de
+Accept: application/json
+
+
+### 🟢 Get Product By Id (GET) – Thay {id} bằng ID thực tế bạn nhận được sau khi POST
+GET http://localhost:5284/api/Product
+Accept: application/json
+
+
+### Đăng nhập lấy JWT token
+POST http://localhost:5284/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123456"
+}
