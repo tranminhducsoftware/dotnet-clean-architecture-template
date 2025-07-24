@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CleanArchExample.Domain.Interfaces;
 
 namespace CleanArchExample.Domain.Entities
 {
-    public class Product
+    public class Product : IAuditableEntity
     {
         public Guid Id { get; set; } // Guid để đảm bảo unique trong distributed system
         public required string Name { get; set; }
@@ -23,5 +24,8 @@ namespace CleanArchExample.Domain.Entities
             if (quantity > Stock) throw new InvalidOperationException("Not enough stock.");
             Stock -= quantity;
         }
+
+        public DateTime CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }

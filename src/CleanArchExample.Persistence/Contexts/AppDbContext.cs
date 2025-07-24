@@ -1,11 +1,15 @@
 using CleanArchExample.Domain.Entities;
+using CleanArchExample.Persistence.Interceptors;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchExample.Persistence.Contexts
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
 
         public DbSet<Product> Products => Set<Product>();
 
@@ -13,8 +17,9 @@ namespace CleanArchExample.Persistence.Contexts
         {
             // base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
-
             // Nếu cần mapping fluent, thêm tại đây
         }
+
+
     }
 }

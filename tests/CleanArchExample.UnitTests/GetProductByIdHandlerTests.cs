@@ -16,7 +16,7 @@ public class UnitTest1
     {
         // Arrange
         var id = Guid.NewGuid();
-        var product = new Product { Id = id, Name = "Product A", Price = 100, Stock = 10 };
+        var product = new Product { Id = id, Name = "Product A", Price = 100, Stock = 10, CreatedAt = DateTime.UtcNow };
         var productDto = new ProductDto { Name = "Product A", Price = 100, Stock = 10 };
 
         var productRepoMock = new Mock<IRepository<Product>>();

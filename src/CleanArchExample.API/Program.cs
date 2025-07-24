@@ -23,7 +23,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Add Application Layer (MediatR)
 builder.Services.AddApplication();
-builder.Services.AddPersistence();
+builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration); // <- Gọi hàm mở rộng vừa tạo
 builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
