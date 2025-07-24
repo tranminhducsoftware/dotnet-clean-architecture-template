@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
-using CleanArchExample.Domain.Interfaces.Services;
 using CleanArchExample.Infrastructure.Services;
 using CleanArchExample.Infrastructure.Identity;
 using Microsoft.Extensions.Configuration;
 using CleanArchExample.Application.Common.Interfaces;
+using CleanArchExample.Application.Interfaces.Services;
 
 namespace CleanArchExample.Infrastructure
 {

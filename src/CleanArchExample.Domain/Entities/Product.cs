@@ -8,7 +8,7 @@ namespace CleanArchExample.Domain.Entities
     public class Product
     {
         public Guid Id { get; set; } // Guid để đảm bảo unique trong distributed system
-        public string Name { get; set; } = string.Empty;
+        public required string Name { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
 

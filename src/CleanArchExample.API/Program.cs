@@ -19,8 +19,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 // Add DbContext
-builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("CleanArchExampleDB"));
-
+// builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("CleanArchExampleDB"));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Add Application Layer (MediatR)
 builder.Services.AddApplication();
 builder.Services.AddPersistence();
@@ -36,7 +36,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    var jwtOptions = builder.Configuration.GetSection("Jwt").Get<JwtOptions>();
+    var jwtOptions = builder.Configuration.GetSection("Jwt").Get<JwtOptions>() ?? new JwtOptions();
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,

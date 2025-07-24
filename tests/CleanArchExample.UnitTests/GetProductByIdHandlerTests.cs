@@ -2,9 +2,9 @@
 using CleanArchExample.Application.DTOs;
 using CleanArchExample.Application.Features.Products.Handlers;
 using CleanArchExample.Application.Features.Products.Queries;
+using CleanArchExample.Application.Interfaces.Services;
 using CleanArchExample.Domain.Entities;
 using CleanArchExample.Domain.Interfaces;
-using CleanArchExample.Domain.Interfaces.Services;
 using Moq;
 
 namespace CleanArchExample.UnitTests;

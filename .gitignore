@@ -75,7 +75,7 @@ docker-compose.override.yml
 # -------------------------
 # EF Core Migrations snapshot (optional)
 # -------------------------
-**/Migrations/
+# **/Migrations/
 
 # -------------------------
 # NodeJS if you have front-end included later

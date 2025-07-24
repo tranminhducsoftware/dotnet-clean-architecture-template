@@ -11,8 +11,9 @@ namespace CleanArchExample.Persistence.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-            
+            // base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+
             // Nếu cần mapping fluent, thêm tại đây
         }
     }
