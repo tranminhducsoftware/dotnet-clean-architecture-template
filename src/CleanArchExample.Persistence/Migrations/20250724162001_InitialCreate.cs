@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable

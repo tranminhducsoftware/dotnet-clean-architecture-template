@@ -1,3 +1,5 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

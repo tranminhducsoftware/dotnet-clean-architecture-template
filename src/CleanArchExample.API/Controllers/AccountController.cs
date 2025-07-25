@@ -1,10 +1,11 @@
-using System;
-using System.Collections.Generic;
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Threading.Tasks;
+
 using CleanArchExample.Application.Features.Auth.Commands;
+
 using MediatR;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

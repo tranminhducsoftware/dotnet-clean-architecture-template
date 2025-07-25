@@ -1,56 +1,59 @@
-using System.IdentityModel.Tokens.Jwt;
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using CleanArchExample.Application.Features.Auth.Commands;
+
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
+
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchExample.API.Controllers;
-
-[ApiController]
-[Route("api/auth/[controller]")]
-public class AuthController : ControllerBase
+namespace CleanArchExample.API.Controllers
 {
-    private readonly IMediator _mediator;
-    public AuthController(IMediator mediator)
+    [ApiController]
+    [Route("api/auth/[controller]")]
+    public class AuthController : ControllerBase
     {
-        _mediator = mediator;
-    }
-
-    [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginCommand command)
-    {
-        try
+        private readonly IMediator _mediator;
+        public AuthController(IMediator mediator)
         {
-            var token = await _mediator.Send(command);
-            return Ok(token);
+            _mediator = mediator;
         }
-        catch (UnauthorizedAccessException e)
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginCommand command)
         {
-            return Unauthorized(e.Message);
+            try
+            {
+                var token = await _mediator.Send(command);
+                return Ok(token);
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                return Unauthorized(e.Message);
+            }
         }
-    }
 
 
-    [HttpPost("refresh-token")]
-    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand command)
-    {
-        try
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand command)
         {
-            var token = await _mediator.Send(command);
-            return Ok(new { Token = token });
+            try
+            {
+                var token = await _mediator.Send(command);
+                return Ok(new { Token = token });
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                return Unauthorized(e.Message);
+            }
         }
-        catch (UnauthorizedAccessException e)
-        {
-            return Unauthorized(e.Message);
-        }
-    }
 
-    [HttpPost("logout")]
-    public IActionResult Logout()
-    {
-        // Implement logout logic, e.g., invalidate token
-        return Ok(new { Message = "Logged out successfully" });
-    }
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            // Implement logout logic, e.g., invalidate token
+            return Ok(new { Message = "Logged out successfully" });
+        }
 
    
+    }
 }

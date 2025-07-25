@@ -1,21 +1,22 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
 
-
-namespace CleanArchExample.API.Middlewares;
-
-public class RequestLoggingMiddleware
+namespace CleanArchExample.API.Middlewares
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<RequestLoggingMiddleware> _logger;
-
-    public RequestLoggingMiddleware(RequestDelegate next, ILogger<RequestLoggingMiddleware> logger)
+    public class RequestLoggingMiddleware
     {
-        _next = next;
-        _logger = logger;
-    }
+        private readonly RequestDelegate _next;
+        private readonly ILogger<RequestLoggingMiddleware> _logger;
 
-    public async Task Invoke(HttpContext context)
-    {
-        _logger.LogInformation("Handling request: {method} {url}", context.Request.Method, context.Request.Path);
-        await _next(context);
+        public RequestLoggingMiddleware(RequestDelegate next, ILogger<RequestLoggingMiddleware> logger)
+        {
+            _next = next;
+            _logger = logger;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            _logger.LogInformation("Handling request: {method} {url}", context.Request.Method, context.Request.Path);
+            await _next(context);
+        }
     }
 }

@@ -1,3 +1,5 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using CleanArchExample.Domain.Interfaces;
 using CleanArchExample.Persistence.Contexts;
 using CleanArchExample.Persistence.Interceptors;

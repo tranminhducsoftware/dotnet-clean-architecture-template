@@ -1,31 +1,34 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using System.Net.Http.Json;
+
 using CleanArchExample.Application.DTOs;
 using CleanArchExample.IntegrationTests.Common;
-using Xunit;
 
-namespace CleanArchExample.IntegrationTests;
-
-public class ProductControllerTests : IClassFixture<CustomWebApplicationFactory>
+namespace CleanArchExample.IntegrationTests
 {
-    private readonly HttpClient _client;
-
-    public ProductControllerTests(CustomWebApplicationFactory factory)
+    public class ProductControllerTests : IClassFixture<CustomWebApplicationFactory>
     {
-        _client = factory.CreateClient();
-    }
+        private readonly HttpClient _client;
 
-    [Fact]
-    public async Task CreateProduct_ReturnsOk()
-    {
-        var request = new ProductDto
+        public ProductControllerTests(CustomWebApplicationFactory factory)
         {
-            Name = "Integration Product",
-            Price = 123,
-            Stock = 10
-        };
+            _client = factory.CreateClient();
+        }
 
-        var response = await _client.PostAsJsonAsync("/api/Product", request);
+        [Fact]
+        public async Task CreateProduct_ReturnsOk()
+        {
+            var request = new ProductDto
+            {
+                Name = "Integration Product",
+                Price = 123,
+                Stock = 10
+            };
 
-        response.EnsureSuccessStatusCode(); // throw nếu không 200
+            var response = await _client.PostAsJsonAsync("/api/Product", request);
+
+            response.EnsureSuccessStatusCode(); // throw nếu không 200
+        }
     }
 }

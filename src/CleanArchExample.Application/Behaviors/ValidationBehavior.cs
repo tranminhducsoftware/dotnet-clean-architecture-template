@@ -1,10 +1,13 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using FluentValidation;
+
 using MediatR;
 
-namespace CleanArchExample.Application.Behaviors
-{
-    public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>
+namespace CleanArchExample.Application.Behaviors;
+
+public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+where TRequest : IRequest<TResponse>
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
@@ -37,6 +40,4 @@ namespace CleanArchExample.Application.Behaviors
 
         return await next();
     }
-}
-
 }

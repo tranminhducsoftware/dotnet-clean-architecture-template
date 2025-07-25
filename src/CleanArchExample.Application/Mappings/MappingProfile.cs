@@ -1,13 +1,16 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using AutoMapper;
 using CleanArchExample.Application.DTOs;
 using CleanArchExample.Domain.Entities;
 
-namespace CleanArchExample.Application.Mappings;
-
-public class MappingProfile : Profile
+namespace CleanArchExample.Application.Mappings
 {
-    public MappingProfile()
+    public class MappingProfile : Profile
     {
-        CreateMap<Product, ProductDto>().ReverseMap();
+        public MappingProfile()
+        {
+            CreateMap<Product, ProductDto>().ReverseMap();
+        }
     }
 }

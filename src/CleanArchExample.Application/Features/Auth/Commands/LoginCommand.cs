@@ -1,3 +1,5 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using CleanArchExample.Application.Features.Auth.Dtos;
 using MediatR;
 

@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
 
-namespace CleanArchExample.Application.Features.Auth.Handler
+namespace CleanArchExample.Application.Features.Auth.Handler;
+
+public class RefreshTokenCommandHandler
 {
-    public class RefreshTokenCommandHandler
-    {
-        
-    }
+
 }

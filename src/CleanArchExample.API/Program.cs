@@ -1,3 +1,5 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using CleanArchExample.Infrastructure;
 using CleanArchExample.Application;
 using CleanArchExample.Persistence.Contexts;

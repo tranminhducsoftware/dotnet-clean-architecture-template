@@ -1,3 +1,5 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using Microsoft.Extensions.DependencyInjection;
 using CleanArchExample.Infrastructure.Services;
 using CleanArchExample.Infrastructure.Identity;

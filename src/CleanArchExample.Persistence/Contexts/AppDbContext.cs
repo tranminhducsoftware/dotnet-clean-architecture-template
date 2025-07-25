@@ -1,5 +1,7 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using CleanArchExample.Domain.Entities;
-using CleanArchExample.Persistence.Interceptors;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchExample.Persistence.Contexts

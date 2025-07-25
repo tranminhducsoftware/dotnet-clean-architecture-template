@@ -1,23 +1,121 @@
-# EditorConfig helps maintain consistent coding styles for multiple developers working on the same project.
+# .editorconfig chuẩn nghiêm khắc cho dự án lớn .NET/C#
+
 root = true
 
-# Specify default settings for all files
-[*]
-charset = utf-8
+[*.cs]
+############################################
+# === FORMAT CHUẨN (KHOẢNG TRẮNG NGHIÊM NGẶT) ===
+############################################
 indent_style = space
 indent_size = 4
-end_of_line = lf
+end_of_line = crlf
+charset = utf-8-bom
 insert_final_newline = true
 trim_trailing_whitespace = true
+max_line_length = 120               # Giới hạn 120 ký tự/dòng
 
-# Specific settings for C# files
-[*.cs]
-indent_size = 4
+# Không có nhiều dòng trắng liên tiếp
+dotnet_style_allow_multiple_blank_lines = false:warning
 
-# Specific settings for JSON files
-[*.json]
+# Không có dòng trắng thừa đầu/giữa/cuối file, giữa các phần tử
+csharp_style_allow_embedded_statements_on_same_line = false:warning
+
+# Cách giữa member/class/property = 1 dòng trắng
+csharp_style_allow_blank_lines_between_consecutive_braces = false:warning
+
+# Không thụt lề bằng tab, chỉ dùng space
+indent_style = space
+tab_width = 4
+
+# Không thêm dấu space trước/giữa các dấu (), [], {}
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+
+# Không có space trước dấu ; hoặc ,
+csharp_space_before_semicolon = false
+csharp_space_before_comma = false
+
+# Có 1 space sau dấu ,
+csharp_space_after_comma = true
+
+# Không có space trước ( và [
+csharp_space_before_open_square_brackets = false
+csharp_space_before_open_parentheses = false
+
+# Có 1 space sau keyword if, for, while...
+csharp_space_after_keywords_in_control_flow_statements = true
+
+# Không có dòng trắng trước } đóng block
+csharp_new_line_before_close_brace = false
+
+# Có 1 dòng trắng giữa các method/property/class
+csharp_new_line_between_members = true
+
+############################################
+# === USING CHUẨN & REMOVE USING THỪA ===
+############################################
+dotnet_sort_system_directives_first = true           # System.* lên đầu
+dotnet_separate_import_directive_groups = true       # Group rõ ràng
+dotnet_remove_unnecessary_usings = true              # Luôn xóa using không dùng
+dotnet_diagnostic.IDE0005.severity = warning         # Báo warning khi có using không dùng
+
+############################################
+# === ĐẶT TÊN CHUẨN (NAMING CONVENTIONS) ===
+############################################
+
+# ... (như phần trước bạn đã dùng, giữ nguyên)
+
+############################################
+# === C# CODE STYLE ===
+############################################
+csharp_new_line_before_open_brace = all             # Xuống dòng trước dấu {
+csharp_indent_case_contents = true                  # Thụt lề case trong switch
+csharp_indent_switch_labels = true                  # Thụt lề label trong switch
+
+############################################
+# === VAR USAGE CHUẨN ===
+############################################
+dotnet_style_var_for_built_in_types = true:suggestion
+dotnet_style_var_when_type_is_apparent = true:suggestion
+dotnet_style_var_elsewhere = false:suggestion
+
+############################################
+# === EXPRESSION-BODIED MEMBER CHUẨN ===
+############################################
+dotnet_style_prefer_expression_bodied_methods = true:suggestion
+dotnet_style_prefer_expression_bodied_properties = true:suggestion
+
+############################################
+# === REMOVE UNUSED VARIABLE/PARAMETER ===
+############################################
+dotnet_diagnostic.IDE0059.severity = warning
+dotnet_diagnostic.IDE0060.severity = warning
+
+############################################
+# === FILE, COMPLEXITY GUIDELINE (KHÔNG ENFORCE, CHỈ GUIDELINE) ===
+############################################
+# File code không nên quá 400 dòng (Sonar S104)
+# Độ phức tạp cyclomatic mỗi method không quá 10 (Sonar S3776)
+# => Nếu vượt, phải refactor. Rule này được SonarQube kiểm tra.
+
+############################################
+# === FILE HEADER (BẢN QUYỀN/NHÓM TEAM) ===
+############################################
+# file_header_template cho tranminhducsoft
+
+file_header_template = Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
+
+############################################
+# === JSON, XML FORMAT CHUẨN ===
+############################################
+[*.{json,xml}]
+indent_style = space
 indent_size = 2
 
-# Specific settings for Markdown files
-[*.md]
-trim_trailing_whitespace = false
+############################################
+# === BỎ QUA FILE GENERATED (Designer) ===
+############################################
+[*.Designer.cs]
+generated_code = true

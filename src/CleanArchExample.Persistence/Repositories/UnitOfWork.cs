@@ -1,36 +1,39 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using CleanArchExample.Domain.Interfaces;
 using CleanArchExample.Persistence.Contexts;
 
-namespace CleanArchExample.Persistence.Repositories;
-
-public class UnitOfWork : IUnitOfWork
+namespace CleanArchExample.Persistence.Repositories
 {
-    private readonly AppDbContext _context;
-    private readonly Dictionary<Type, object> _repositories = new();
-
-    public UnitOfWork(AppDbContext context)
+    public class UnitOfWork : IUnitOfWork
     {
-        _context = context;
-    }
+        private readonly AppDbContext _context;
+        private readonly Dictionary<Type, object> _repositories = new();
 
-    public IRepository<T> Repository<T>() where T : class
-    {
-        var type = typeof(T);
-        if (!_repositories.TryGetValue(type, out object? value))
+        public UnitOfWork(AppDbContext context)
         {
-            var repoInstance = new Repository<T>(_context);
-            value = repoInstance;
-            _repositories.Add(type, value);
+            _context = context;
         }
 
-        return (IRepository<T>)value;
-    }
+        public IRepository<T> Repository<T>() where T : class
+        {
+            var type = typeof(T);
+            if (!_repositories.TryGetValue(type, out object? value))
+            {
+                var repoInstance = new Repository<T>(_context);
+                value = repoInstance;
+                _repositories.Add(type, value);
+            }
 
-    public async Task<int> SaveChangesAsync()
-        => await _context.SaveChangesAsync();
+            return (IRepository<T>)value;
+        }
 
-    public void Dispose()
-    {
-        _context.Dispose();
+        public async Task<int> SaveChangesAsync()
+            => await _context.SaveChangesAsync();
+
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
     }
 }

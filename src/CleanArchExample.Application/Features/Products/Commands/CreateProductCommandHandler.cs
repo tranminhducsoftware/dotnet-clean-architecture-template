@@ -1,3 +1,5 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using System.ComponentModel.DataAnnotations;
 using CleanArchExample.Application.Features.Products.Commands;
 using CleanArchExample.Application.Features.Products.Validators;

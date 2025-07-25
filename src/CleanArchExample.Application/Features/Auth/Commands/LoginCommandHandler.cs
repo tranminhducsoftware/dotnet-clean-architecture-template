@@ -1,6 +1,9 @@
+// Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
+
 using CleanArchExample.Application.Common.Interfaces;
 using CleanArchExample.Application.Features.Auth.Commands;
 using CleanArchExample.Application.Features.Auth.Dtos;
+
 using MediatR;
 
 namespace CleanArchExample.Application.Features.Users.Handler
@@ -16,6 +19,7 @@ namespace CleanArchExample.Application.Features.Users.Handler
 
         public async Task<LoginResultDto> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
+            await Task.Delay(1000, cancellationToken); // Simulate async operation
             // TODO: check DB/identity real
             if (request.Username == "admin" && request.Password == "123456")
             {
