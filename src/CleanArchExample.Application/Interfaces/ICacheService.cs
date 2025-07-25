@@ -4,8 +4,8 @@ namespace CleanArchExample.Application.Interfaces.Services
 {
     public interface ICacheService
     {
-        T? Get<T>(string key);
-        void Set<T>(string key, T value, TimeSpan? expiration = null);
-        void Remove(string key);
+        Task SetAsync(string key, string value, TimeSpan? expiry = null);
+        Task<string?> GetAsync(string key);
+        Task RemoveAsync(string key);
     }
 }
