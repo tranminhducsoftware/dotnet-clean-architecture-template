@@ -1,3 +1,4 @@
+# enable push code github
 # 🧼 Clean Architecture .NET Template
 
 A production-grade template for ASP.NET Core Web API using Clean Architecture, CQRS, MediatR, JWT Authentication, Serilog, Redis Caching, and more.
