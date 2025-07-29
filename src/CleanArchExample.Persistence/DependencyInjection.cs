@@ -7,6 +7,7 @@ using CleanArchExample.Persistence.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using EFCoreSecondLevelCacheInterceptor;
 
 namespace CleanArchExample.Persistence
 {
@@ -24,8 +25,10 @@ namespace CleanArchExample.Persistence
             {
                 var audit = sp.GetRequiredService<AuditableEntityInterceptor>();
                 var sqlLog = sp.GetRequiredService<CommandLoggingInterceptor>();
+                var cacheInterceptor = sp.GetRequiredService<SecondLevelCacheInterceptor>();
+
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-                options.AddInterceptors(audit, sqlLog);
+                options.AddInterceptors(audit, sqlLog, cacheInterceptor);
             });
 
             return services;

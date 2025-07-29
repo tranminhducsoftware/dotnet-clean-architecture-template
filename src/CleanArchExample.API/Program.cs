@@ -2,8 +2,6 @@
 
 using CleanArchExample.Infrastructure;
 using CleanArchExample.Application;
-using CleanArchExample.Persistence.Contexts;
-using Microsoft.EntityFrameworkCore;
 using CleanArchExample.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using CleanArchExample.Infrastructure.Identity;
@@ -12,17 +10,28 @@ using System.Text;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
 using CleanArchExample.API.Middlewares;
+using Serilog;
+using CleanArchExample.API.Extensions;
+// using EFCoreSecondLevelCacheInterceptor;
 // using OpenTelemetry.Instrumentation.SqlClient;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+// 👇 Serilog config
+builder.Host.UseSerilog((ctx, config) =>
+{
+    config.ReadFrom.Configuration(ctx.Configuration)
+          .Enrich.FromLogContext()
+          //   .Enrich.WithMachineName()
+          //   .Enrich.WithThreadId()
+          .Enrich.WithProperty("App", "CleanArchExample");
+});
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 // Add DbContext
-// builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("CleanArchExampleDB"));
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Add Application Layer (MediatR)
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
@@ -62,15 +71,19 @@ builder.Services.AddOpenTelemetry()
             .AddAspNetCoreInstrumentation()
             // .AddSqlClientInstrumentation()
             .AddConsoleExporter(); // Export ra console (dễ debug dev)
-            // .AddJaegerExporter() // Nếu muốn export Jaeger
-            // .AddZipkinExporter() // Nếu muốn export Zipkin
+                                   // .AddJaegerExporter() // Nếu muốn export Jaeger
+                                   // .AddZipkinExporter() // Nếu muốn export Zipkin
     });
-    
+
+builder.Services.AddAppSecondLevelCache(builder.Configuration);
+
 var app = builder.Build();
 
 app.MapControllers(); // <- để Controller được map route
 app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseMiddleware<ExceptionHandlingMiddleware>(); // bắt lỗi toàn cục
+app.UseMiddleware<LogContextMiddleware>();
+
 app.UseAuthentication();
 app.UseAuthorization();
 // Configure the HTTP request pipeline.

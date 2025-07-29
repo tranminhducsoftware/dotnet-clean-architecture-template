@@ -2,9 +2,10 @@
 
 namespace CleanArchExample.Application.Interfaces.Services
 {
-    public interface ILoggerService<T>
+    public interface ILoggerService
     {
-        void LogInfo(string message);
-        void LogError(string message, Exception ex);
+        void LogInformation(string message, string? userId = null);
+        void LogWarning(string message, string? userId = null);
+        void LogError(string message, Exception? ex = null, string? userId = null);
     }
 }

@@ -1,8 +1,7 @@
 // Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
 
+using System.Diagnostics;
 using System.Net;
-using System.Text.Json;
-
 namespace CleanArchExample.API.Middlewares
 {
     public class ExceptionHandlingMiddleware
@@ -24,19 +23,20 @@ namespace CleanArchExample.API.Middlewares
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Unhandled exception: {Message}", ex.Message);
+                var traceId = Activity.Current?.TraceId.ToString();
+                _logger.LogError(ex, "Unhandled Exception - TraceId: {TraceId}", traceId);
 
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-                var response = new
+                var error = new
                 {
                     message = ex.Message,
                     statusCode = context.Response.StatusCode,
                     traceId = context.TraceIdentifier
                 };
 
-                await context.Response.WriteAsync(JsonSerializer.Serialize(response));
+                await context.Response.WriteAsJsonAsync(error);
             }
         }
     }

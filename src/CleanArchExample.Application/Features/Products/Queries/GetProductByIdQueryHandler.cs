@@ -20,15 +20,15 @@ namespace CleanArchExample.Application.Features.Products.Handlers
 
         public async Task<Result<ProductDto>> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
         {
-            var key = $"product-{request.Id}";
-            var cached = _cache.Get<ProductDto>(key);
-            if (cached != null) return Result<ProductDto>.Success(cached);
+            // var key = $"product-{request.Id}";
+            // var cached = _cache.Get<ProductDto>(key);
+            // if (cached != null) return Result<ProductDto>.Success(cached);
 
             var product = await _unitOfWork.Repository<Product>().GetByIdAsync(request.Id);
             if (product == null) return Result<ProductDto>.Failure("Product not found");
 
             var dto = _mapper.Map<ProductDto>(product);
-            _cache.Set(key, dto);
+            // _cache.Set(key, dto);
 
             return Result<ProductDto>.Success(dto);
         }

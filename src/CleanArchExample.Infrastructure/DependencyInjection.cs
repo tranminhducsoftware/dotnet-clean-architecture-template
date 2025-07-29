@@ -6,6 +6,7 @@ using CleanArchExample.Infrastructure.Identity;
 using Microsoft.Extensions.Configuration;
 using CleanArchExample.Application.Common.Interfaces;
 using CleanArchExample.Application.Interfaces.Services;
+using CleanArchExample.Infrastructure.Logging;
 
 namespace CleanArchExample.Infrastructure
 {
@@ -14,7 +15,9 @@ namespace CleanArchExample.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<IEmailService, EmailService>();
-            services.AddScoped(typeof(ILoggerService<>), typeof(LoggerService<>));
+            // services.AddScoped(typeof(ILoggerService<>), typeof(LoggerService<>));
+            services.AddScoped<ILoggerService, LoggerService>();
+            services.AddHttpContextAccessor(); // Nếu cần UserId theo HttpContext
 
             services.Configure<JwtOptions>(config.GetSection("Jwt"));
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();

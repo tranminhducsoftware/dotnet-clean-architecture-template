@@ -1,27 +1,41 @@
 // Copyright (c) 2025 tranminhducsoftware. Author: Tran Minh Duc. Licensed under MIT.
 
+using System.Diagnostics;
+
 using CleanArchExample.Application.Interfaces.Services;
+
 using Microsoft.Extensions.Logging;
 
-namespace CleanArchExample.Infrastructure.Services
+namespace CleanArchExample.Infrastructure.Logging;
+
+public class LoggerService : ILoggerService
 {
-    public class LoggerService<T> : ILoggerService<T>
+    private readonly ILogger<LoggerService> _logger;
+
+    public LoggerService(ILogger<LoggerService> logger)
     {
-        private readonly ILogger<T> _logger;
-        public LoggerService(ILogger<T> logger)
-        {
-            _logger = logger;
-        }
+        _logger = logger;
+    }
 
-        public void LogInfo(string message)
-        {
-            _logger.LogInformation(message);
-        }
+    private string Format(string message, string? userId)
+    {
+        var traceId = Activity.Current?.TraceId.ToString() ?? "N/A";
+        var requestId = Activity.Current?.Id ?? "N/A";
+        return $"[TraceId:{traceId} RequestId:{requestId} UserId:{userId ?? "anonymous"}] {message}";
+    }
 
-        public void LogError(string message, Exception ex)
-        {
-            _logger.LogError(ex, message);
-        }
+    public void LogInformation(string message, string? userId = null)
+    {
+        _logger.LogInformation(Format(message, userId));
+    }
+
+    public void LogWarning(string message, string? userId = null)
+    {
+        _logger.LogWarning(Format(message, userId));
+    }
+
+    public void LogError(string message, Exception? ex = null, string? userId = null)
+    {
+        _logger.LogError(ex, Format(message, userId));
     }
 }
-
