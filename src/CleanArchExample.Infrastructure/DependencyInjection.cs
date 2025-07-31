@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using CleanArchExample.Application.Common.Interfaces;
 using CleanArchExample.Application.Interfaces.Services;
 using CleanArchExample.Infrastructure.Logging;
+using CleanArchExample.Infrastructure.Health;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace CleanArchExample.Infrastructure
 {
@@ -44,7 +46,12 @@ namespace CleanArchExample.Infrastructure
             else
                 services.AddScoped<ICacheService, MemoryCacheService>();
 
-
+            services.AddSingleton<IAppHealthService, AppHealthService>();
+            services.AddHealthChecks()
+                .AddCheck("self", () => HealthCheckResult.Healthy(), tags: ["live"])
+                .AddCheck<ReadinessHealthCheck>("readiness_check", tags: ["ready"])
+            .AddSqlServer(config.GetConnectionString("DefaultConnection") ?? "", name: "sql", tags: ["ready"])
+            .AddRedis(config["Redis:Configuration"] ?? "", name: "redis", tags: ["ready"]);
             return services;
         }
     }

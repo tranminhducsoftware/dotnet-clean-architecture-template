@@ -92,5 +92,24 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.MapHealthChecks("/healthz", new HealthCheckOptions
+{
+    Predicate = reg => reg.Tags.Contains("live"),
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+app.MapHealthChecks("/readyz", new HealthCheckOptions
+{
+    Predicate = reg => reg.Tags.Contains("ready"),
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+var appHealth = app.Services.GetRequiredService<IAppHealthService>();
+app.Lifetime.ApplicationStopping.Register(() =>
+{
+    appHealth.MarkAsNotReady();
+    Thread.Sleep(5000); // Phù hợp với preStop sleep 5
+});
+
+
 app.UseHttpsRedirection();
 app.Run();
