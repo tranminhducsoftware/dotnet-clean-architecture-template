@@ -12,8 +12,10 @@ using OpenTelemetry.Resources;
 using CleanArchExample.API.Middlewares;
 using Serilog;
 using CleanArchExample.API.Extensions;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using CleanArchExample.Infrastructure.Health;
+using HealthChecks.UI.Client;
 // using EFCoreSecondLevelCacheInterceptor;
-// using OpenTelemetry.Instrumentation.SqlClient;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,7 +40,9 @@ builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration); // <- Gọi hàm mở rộng vừa tạo
 builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
-
+// Đăng ký Swagger service
+builder.Services.AddEndpointsApiExplorer(); // Khuyến nghị thêm dòng này
+builder.Services.AddSwaggerGen();
 // Thêm authentication
 builder.Services.AddAuthentication(options =>
 {
@@ -69,7 +73,8 @@ builder.Services.AddOpenTelemetry()
                 ResourceBuilder.CreateDefault()
                     .AddService(builder.Environment.ApplicationName))
             .AddAspNetCoreInstrumentation()
-            // .AddSqlClientInstrumentation()
+            .AddEntityFrameworkCoreInstrumentation()
+            .AddSqlClientInstrumentation()
             .AddConsoleExporter(); // Export ra console (dễ debug dev)
                                    // .AddJaegerExporter() // Nếu muốn export Jaeger
                                    // .AddZipkinExporter() // Nếu muốn export Zipkin
@@ -89,6 +94,8 @@ app.UseAuthorization();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.MapOpenApi();
 }
 

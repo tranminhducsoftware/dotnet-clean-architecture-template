@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cleanarch-api
+  namespace: cleanarch-dev
+  labels:
+    app: cleanarch-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cleanarch-api
+  template:
+    metadata:
+      labels:
+        app: cleanarch-api
+    spec:
+      containers:
+        - name: cleanarch-api
+          image: kudorivis/cleanarch-api:latest # Sửa thành tên image đã build/push
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Production"
+            - name: ConnectionStrings__DefaultConnection
+              valueFrom:
+                secretKeyRef:
+                  name: cleanarch-secret
+                  key: DefaultConnection
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
