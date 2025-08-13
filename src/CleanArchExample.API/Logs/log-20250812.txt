@@ -1,0 +1,218 @@
+[22:01:10 INF] HTTP Request [GET] /swagger/index.html TraceId: a7fe719d73779fb43fb91771f4ed72ad Body: 
+[22:02:42 ERR] Unhandled Exception - TraceId: a7fe719d73779fb43fb91771f4ed72ad
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:02:42 INF] HTTP Request [GET] /favicon.ico TraceId: f2cfed0855ea6b3b05a07d7a8d424a3d Body: 
+[22:02:43 ERR] Unhandled Exception - TraceId: f2cfed0855ea6b3b05a07d7a8d424a3d
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:14 INF] HTTP Request [GET] /swagger/index.html TraceId: 3b5daf4a96cb9fe7213b2eee221f3856 Body: 
+[22:03:14 ERR] Unhandled Exception - TraceId: 3b5daf4a96cb9fe7213b2eee221f3856
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:14 INF] HTTP Request [GET] /favicon.ico TraceId: 80a0c2bc23b9fcccc9ad63a9b98cbfb2 Body: 
+[22:03:14 ERR] Unhandled Exception - TraceId: 80a0c2bc23b9fcccc9ad63a9b98cbfb2
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:18 INF] HTTP Request [GET] /swagger/index.html TraceId: 6a2e05f8a2ee99cf4c060546ea9d4a00 Body: 
+[22:03:18 ERR] Unhandled Exception - TraceId: 6a2e05f8a2ee99cf4c060546ea9d4a00
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:18 INF] HTTP Request [GET] /favicon.ico TraceId: 7d8ff7bbcca6e73ae290c843d83c2509 Body: 
+[22:03:18 ERR] Unhandled Exception - TraceId: 7d8ff7bbcca6e73ae290c843d83c2509
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:20 INF] HTTP Request [GET] /swagger/index.html TraceId: 8364748cd1447aa8b6d4fa0b28349d6b Body: 
+[22:03:20 ERR] Unhandled Exception - TraceId: 8364748cd1447aa8b6d4fa0b28349d6b
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:20 INF] HTTP Request [GET] /favicon.ico TraceId: 6a79c6333fbb004e0ecc2e028c841977 Body: 
+[22:03:20 ERR] Unhandled Exception - TraceId: 6a79c6333fbb004e0ecc2e028c841977
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:40 INF] HTTP Request [GET] /swagger/index.html TraceId: 31804a7171e75ac4728bde85c469790e Body: 
+[22:03:50 ERR] Unhandled Exception - TraceId: 31804a7171e75ac4728bde85c469790e
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:03:50 INF] HTTP Request [GET] /favicon.ico TraceId: 0f8d2e410988a750056cec5d30fc0910 Body: 
+[22:03:50 ERR] Unhandled Exception - TraceId: 0f8d2e410988a750056cec5d30fc0910
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[22:04:46 INF] HTTP Request [GET] /swagger/index.html TraceId: ec441619c64e2f2239ef2fbdac8da07d Body: 
+[22:04:47 INF] HTTP Request [GET] /swagger/swagger-ui-bundle.js TraceId: b206962f3d6e046a90d939aba5a97eeb Body: 
+[22:04:47 INF] HTTP Request [GET] /swagger/swagger-ui.css TraceId: 8c1016400cf485eb6cadf761d3b48444 Body: 
+[22:04:47 INF] HTTP Request [GET] /swagger/swagger-ui-standalone-preset.js TraceId: ecd2a0ece4f7c5d536cf0914ce779430 Body: 
+[22:04:47 INF] HTTP Request [GET] /swagger/index.js TraceId: b4df0091938d89d4124d77c37c62c518 Body: 
+[22:04:47 INF] HTTP Request [GET] /swagger/index.css TraceId: 30a234c2afb3461ef781f2381255cbf0 Body: 
+[22:04:47 INF] HTTP Request [GET] /swagger/favicon-32x32.png TraceId: 742fe4407a322f5ee4cfdd3fb1ae337e Body: 
+[22:04:47 INF] HTTP Request [GET] /swagger/v1/swagger.json TraceId: 187fa21107a3335636359971f12e7bdf Body: 

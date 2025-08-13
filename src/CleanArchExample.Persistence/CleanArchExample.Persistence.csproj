@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArchExample.Domain\CleanArchExample.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchExample.Application\CleanArchExample.Application.csproj" />
+
   </ItemGroup>
 
 </Project>

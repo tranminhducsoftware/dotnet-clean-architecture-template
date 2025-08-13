@@ -17,9 +17,18 @@ using CleanArchExample.Infrastructure.Health;
 using HealthChecks.UI.Client;
 // using EFCoreSecondLevelCacheInterceptor;
 
+var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? Environments.Production;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Đọc config từ nhiều nguồn (ưu tiên ENV > user-secrets > secret.json > appsettings)
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: true)
+    .AddJsonFile("secret.json", optional: true)                 // Chỉ local/dev mới có
+    .AddUserSecrets<Program>(optional: true)                    // Dev nên dùng
+    .AddEnvironmentVariables();                                 // ENV luôn ưu tiên nhất
 // 👇 Serilog config
 builder.Host.UseSerilog((ctx, config) =>
 {
@@ -38,7 +47,15 @@ builder.Services.AddOpenApi();
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration); // <- Gọi hàm mở rộng vừa tạo
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .ConfigureApiBehaviorOptions(opt => { /* tắt auto 400 nếu muốn custom */ });
+builder.Services.AddApiVersioning(o =>
+{
+    o.AssumeDefaultVersionWhenUnspecified = true;
+    o.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+    o.ReportApiVersions = true;
+});
+
 builder.Services.AddMemoryCache();
 // Đăng ký Swagger service
 builder.Services.AddEndpointsApiExplorer(); // Khuyến nghị thêm dòng này

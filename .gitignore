@@ -92,3 +92,10 @@ coverage/
 
 # Uncomment if you generate sealed secrets
 # sealed-secrets-key.pem
+
+
+# Thêm vào cuối file .gitignore
+/deploy/*.env
+/deploy/*.secret
+/deploy/*.bak
+

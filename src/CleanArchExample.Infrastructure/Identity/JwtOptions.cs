@@ -4,8 +4,8 @@ namespace CleanArchExample.Infrastructure.Identity
 {
     public class JwtOptions
     {
-        public string Key { get; set; } = default!;
-        public string Issuer { get; set; } = default!;
-        public string Audience { get; set; } = default!;
+        public string Issuer { get; init; } = default!;
+        public string Audience { get; init; } = default!;
+        public string SigningKey { get; init; } = default!; // HMAC (HS256) cho gọn
     }
 }

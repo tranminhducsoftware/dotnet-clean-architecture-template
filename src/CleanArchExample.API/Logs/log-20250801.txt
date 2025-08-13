@@ -1,0 +1,124 @@
+[01:03:05 INF] HTTP Request [GET] /healthz TraceId: acda51fd0681d4ed2c364ab84705911a Body: 
+[01:03:05 WRN] Failed to determine the https port for redirect.
+[01:03:05 INF] HTTP Request [GET] /favicon.ico TraceId: 16903199b7b055b73c00a3683a2356a5 Body: 
+[01:03:08 INF] HTTP Request [GET] /healthz TraceId: d9d95bb8367c3d9c894a380482f8f111 Body: 
+[01:03:09 INF] HTTP Request [GET] /healthz TraceId: 28e7b6cf162b5ac00b49ed44ab6348d0 Body: 
+[01:03:11 INF] HTTP Request [GET] /healthz TraceId: 420033c39c3fee78ccfb6421a6496773 Body: 
+[01:03:23 INF] HTTP Request [GET] /readyz TraceId: af3e931de126b8988887d48f20319043 Body: 
+[01:03:25 INF] HTTP Request [GET] /readyz TraceId: bf4046394df3c83f90308945b7d019f8 Body: 
+[01:03:25 ERR] Health check redis with status "Unhealthy" completed after 2378.696ms with message 'Healthcheck timed out'
+[01:03:25 ERR] Health check sql with status "Unhealthy" completed after 2378.6785ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 28
+[01:03:29 ERR] Health check redis with status "Unhealthy" completed after 3366.06ms with message 'Healthcheck timed out'
+[01:03:29 ERR] Health check sql with status "Unhealthy" completed after 3366.1611ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 28
+[01:03:29 INF] HTTP Request [GET] /readyz TraceId: db90166d3b82b4fccc04fe613b2e63ee Body: 
+[01:03:32 ERR] Health check redis with status "Unhealthy" completed after 3265.1433ms with message 'Healthcheck timed out'
+[01:03:32 ERR] Health check sql with status "Unhealthy" completed after 3264.7507ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 28
+[01:03:32 INF] HTTP Request [GET] /readyz TraceId: 64e51a33fd8f6c94404677d5c62c5a53 Body: 
+[01:03:35 ERR] Health check redis with status "Unhealthy" completed after 3090.849ms with message 'Healthcheck timed out'
+[01:03:35 ERR] Health check sql with status "Unhealthy" completed after 3090.4945ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 28
+[01:03:36 INF] HTTP Request [GET] /healthz TraceId: ea9ac6e61178d9f03289a0e860a5e48c Body: 
+[01:03:43 INF] HTTP Request [GET] /readyz TraceId: 76a4535b8fa5b72a9057b0255397a331 Body: 
+[01:03:57 ERR] Health check redis with status "Unhealthy" completed after 14161.266ms with message 'null'
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) localhost:6379/Interactive. ConnectTimeout, command=PING, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 1, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: WINDOWS-PC(SE.Redis-v2.8.41.44383), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=12,Max=32767), POOL: (Threads=5,QueuedItems=0,CompletedItems=635,Timers=20), v: 2.8.41.44383 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s) localhost:6379/Interactive. ConnectTimeout
+   --- End of inner exception stack trace ---
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 75
+[01:03:58 ERR] Health check sql with status "Unhealthy" completed after 14778.4983ms with message 'null'
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 28
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+[01:04:09 INF] HTTP Request [GET] /readyz TraceId: 2bc78578e6cca67798fe447afa1bd232 Body: 
+[01:04:15 ERR] Health check redis with status "Unhealthy" completed after 5945.095ms with message 'Healthcheck timed out'
+[01:04:15 ERR] Health check sql with status "Unhealthy" completed after 5944.1299ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 28
+[22:59:37 INF] HTTP Request [GET] / TraceId: 65fe750866c1c4bb03f1cacf24934dad Body: 
+[22:59:37 WRN] Failed to determine the https port for redirect.
+[23:01:21 INF] HTTP Request [GET] /swagger/v1/openapi.json TraceId: 8191c49679b47c94372db076698a9565 Body: 
+[23:05:20 INF] HTTP Request [GET] /swagger TraceId: 33200e3bc6a2c0cab438c9b4c22f30d6 Body: 
+[23:05:20 ERR] Unhandled Exception - TraceId: 33200e3bc6a2c0cab438c9b4c22f30d6
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[23:05:20 INF] HTTP Request [GET] /favicon.ico TraceId: e6010c3fe9f2933842bc81b9a0a80aa2 Body: 
+[23:05:20 ERR] Unhandled Exception - TraceId: e6010c3fe9f2933842bc81b9a0a80aa2
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[23:05:26 INF] HTTP Request [GET] /swagger/index.html TraceId: 1459042ac1c74e90ef317e0cd66adbbb Body: 
+[23:05:27 ERR] Unhandled Exception - TraceId: 1459042ac1c74e90ef317e0cd66adbbb
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[23:05:27 INF] HTTP Request [GET] /favicon.ico TraceId: 2face21d8e7bf2284342dec4aba1b7c8 Body: 
+[23:05:27 ERR] Unhandled Exception - TraceId: 2face21d8e7bf2284342dec4aba1b7c8
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[23:05:37 INF] HTTP Request [GET] /swagger TraceId: 8eb675a2703c9cd47d8d0a84e742a99a Body: 
+[23:05:37 ERR] Unhandled Exception - TraceId: 8eb675a2703c9cd47d8d0a84e742a99a
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[23:05:37 INF] HTTP Request [GET] /favicon.ico TraceId: 7c3fed9c87e507046aea8d281e585c28 Body: 
+[23:05:37 ERR] Unhandled Exception - TraceId: 7c3fed9c87e507046aea8d281e585c28
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at CleanArchExample.API.Middlewares.LogContextMiddleware.InvokeAsync(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\LogContextMiddleware.cs:line 30
+   at CleanArchExample.API.Middlewares.ExceptionHandlingMiddleware.Invoke(HttpContext context) in c:\Users\Windows\Desktop\Upgrate\Technique\dotnet-clean-architecture-template\src\CleanArchExample.API\Middlewares\ExceptionHandlingMiddleware.cs:line 22
+[23:06:31 INF] HTTP Request [GET] /swagger TraceId: 056c6c3b7f06a77138baeb51a7c823db Body: 
+[23:06:31 INF] HTTP Request [GET] /swagger/index.html TraceId: 47f4681b7aa84eb58dd9779073d62d40 Body: 
+[23:06:31 INF] HTTP Request [GET] /swagger/swagger-ui.css TraceId: c61b426df379f11a2585af24735ecd14 Body: 
+[23:06:31 INF] HTTP Request [GET] /swagger/index.css TraceId: 5f1201e16886e7a3e0e7b6271e7d06a7 Body: 
+[23:06:31 INF] HTTP Request [GET] /swagger/swagger-ui-bundle.js TraceId: 3256e7115f765a8b284fc1054b88931c Body: 
+[23:06:31 INF] HTTP Request [GET] /swagger/swagger-ui-standalone-preset.js TraceId: 4dc9ef09f0b2ab25c24d3715354599ac Body: 
+[23:06:31 INF] HTTP Request [GET] /swagger/index.js TraceId: c3a47acd8ab2a11273c186b74c8bbc36 Body: 
+[23:06:32 INF] HTTP Request [GET] /swagger/v1/swagger.json TraceId: a6e2da94520da21a80d402cf374e76e2 Body: 
+[23:06:32 INF] HTTP Request [GET] /swagger/favicon-32x32.png TraceId: 883abeb7b914d6f9fe75c347a632b2a1 Body: 
+[23:07:12 INF] HTTP Request [GET] /swagger/v1/swagger.json TraceId: c876cf6e492ecb96daf509d53ab69865 Body: 
+[23:07:19 INF] HTTP Request [GET] /openapi TraceId: 6aa6f14971e51aab20484789447c1964 Body: 
+[23:07:19 WRN] Failed to determine the https port for redirect.
+[23:08:38 INF] HTTP Request [GET] /openapi/v1.json TraceId: 39efd03123977a5b82e4f5b97d2f6c42 Body: 
+[23:08:38 INF] HTTP Request [GET] /favicon.ico TraceId: edc40b773aed3ecbb3d8af46baa14e69 Body: 
+[23:21:03 INF] HTTP Request [GET] /swagger/v1/swagger.json TraceId: a28d160d5a6fd101c4eb76769f55e86d Body: 
